@@ -1,0 +1,157 @@
+/* Footer */
+.footer {
+  /*background: linear-gradient(135deg, #1e3a5f 0%, #152a45 100%);*/
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #1e3a5f;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+/* Conteneur pour chaque icône + texte */
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Le lien contenant seulement l'icône */
+.social-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.facebook {
+  background: #1877f2;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.youtube {
+  background: #ff0000;
+}
+
+.tiktok {
+  background: #000000;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Le texte en dehors du lien */
+.social-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.footer-copyright {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: #1e3a5f;
+  margin-top: 0.8rem;
+  font-weight: 700;
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 25px 15px 15px 15px;
+  }
+
+  .footer-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-label {
+    font-size: 0.75rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px 12px 10px;
+  }
+
+  .footer-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .social-links {
+    gap: 1.2rem;
+  }
+
+  .social-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .social-label {
+    font-size: 0.7rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.7rem;
+    margin-top: 0.6rem;
+  }
+}

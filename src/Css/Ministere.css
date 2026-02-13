@@ -1,0 +1,622 @@
+/* Reset global */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Page Ministère - Styles généraux */
+.ministere-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Reset pour éviter les débordements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Section Ministère*/
+.ministere-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1600') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 150px 20px 80px; 
+}
+
+.ministere-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.ministere-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding: 40px 20px; 
+  width: 100%;
+}
+
+.ministere-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px; 
+  letter-spacing: 1px;
+}
+
+.ministere-hero-underline {
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(to right, #D4A54A, #F4C542);
+  margin: 0 auto 30px;
+}
+
+.ministere-hero-subtitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 50px; 
+}
+
+.ministere-hero-verse {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 35px; 
+  border-radius: 10px;
+  margin: 50px auto; 
+  max-width: 900px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ministere-verse-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.9;
+  margin-bottom: 20px; 
+}
+
+.ministere-verse-ref {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F4C542;
+}
+
+.ministere-hero-description {
+  font-size: 1.05rem;
+  line-height: 1.9; 
+  max-width: 900px;
+  margin: 40px auto 0; 
+  text-align: justify;
+  padding: 0 20px; 
+}
+
+/* Section Étapes d'intégration  */
+.etapes-integration {
+  padding: 100px 20px; 
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2C3E50;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.etapes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.etape-card {
+  background: #f8f9fa;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.etape-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.etape-title {
+  font-size: 1.8rem;
+  color: #2C3E50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.etape-description {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Section "Êtes-vous prêt" */
+.ready-section {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.ready-title {
+  font-size: 2rem;
+  color: #2C3E50;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.btn-accueil {
+  background: #2C3E50;
+  color: white;
+  padding: 20px 40px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.btn-accueil:hover {
+  background: #34495E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Université Espoir */
+.universite-section {
+  padding: 80px 20px;
+  background: white;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.universite-image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.universite-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.universite-button-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 10;
+}
+
+.btn-visit-universite {
+  background: #2C3E50;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-visit-universite:hover {
+  background: #34495E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive pour la section Université */
+@media (max-width: 768px) {
+  .universite-section {
+    padding: 60px 15px;
+  }
+
+  .universite-button-overlay {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .btn-visit-universite {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .universite-section {
+    padding: 40px 10px;
+  }
+
+  .universite-button-overlay {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .btn-visit-universite {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Section La Parole Qui Change */
+.parole-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.parole-image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.parole-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.parole-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.parole-content-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.parole-overlay-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.parole-overlay-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  max-width: 900px;
+}
+
+.parole-overlay-replay {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  max-width: 850px;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.parole-button-overlay {
+  position: relative;
+  z-index: 3;
+  padding: 0 50px 40px;
+  margin-top: auto;
+}
+
+.btn-visit-parole {
+  background: #2C3E50;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-visit-parole:hover {
+  background: #34495E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 1024px) {
+  .parole-image-container {
+    min-height: 550px;
+  }
+
+  .parole-content-overlay {
+    padding: 40px;
+  }
+
+  .parole-overlay-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .parole-overlay-description {
+    font-size: 1rem;
+  }
+
+  .parole-overlay-replay {
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+  }
+
+  .parole-button-overlay {
+    padding: 0 40px 35px;
+  }
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+  .parole-section {
+    padding: 60px 15px;
+  }
+
+  .parole-image-container {
+    min-height: 500px;
+  }
+
+  .parole-content-overlay {
+    padding: 30px 25px;
+  }
+
+  .parole-overlay-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .parole-overlay-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .parole-overlay-replay {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .parole-button-overlay {
+    padding: 0 25px 25px;
+  }
+
+  .btn-visit-parole {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsive pour petits mobiles */
+@media (max-width: 480px) {
+  .parole-section {
+    padding: 40px 10px;
+  }
+
+  .parole-image-container {
+    min-height: 550px;
+  }
+
+  .parole-content-overlay {
+    padding: 25px 20px;
+  }
+
+  .parole-overlay-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  .parole-overlay-description {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .parole-overlay-replay {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .parole-button-overlay {
+    padding: 0 20px 25px;
+  }
+
+  .btn-visit-parole {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra petits écrans */
+@media (max-width: 360px) {
+  .parole-image-container {
+    min-height: 580px;
+  }
+
+  .parole-content-overlay {
+    padding: 20px 15px;
+  }
+
+  .parole-overlay-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .parole-overlay-description {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .parole-overlay-replay {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+  }
+
+  .parole-button-overlay {
+    padding: 0 15px 20px;
+  }
+
+  .btn-visit-parole {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Active link dans la navigation */
+.nav-menu a.active {
+  color: #F4C542;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ministere-hero {
+    min-height: 90vh;
+    padding: 120px 15px 60px;
+  }
+
+  .ministere-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .ministere-hero-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .ministere-verse-text {
+    font-size: 1rem;
+  }
+
+  .ministere-hero-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .etapes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .etapes-integration {
+    padding: 80px 20px;
+  }
+
+  .universite-main-title {
+    font-size: 2.5rem;
+  }
+
+  .parole-hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-accueil {
+    padding: 15px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ministere-hero {
+    min-height: 85vh;
+    padding: 100px 10px 40px;
+  }
+
+  .ministere-hero-title {
+    font-size: 2rem;
+  }
+
+  .ministere-hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .ministere-hero-verse {
+    padding: 25px;
+    margin: 30px auto;
+  }
+
+  .ministere-verse-text {
+    font-size: 0.95rem;
+  }
+
+  .ministere-hero-description {
+    font-size: 0.95rem;
+  }
+
+  .universite-hero {
+    height: 400px;
+  }
+
+  .parole-hero {
+    height: 500px;
+  }
+}

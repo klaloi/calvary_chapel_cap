@@ -1,0 +1,177 @@
+/* Contact Page Styles */
+.contact-page {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  padding-top: 80px;
+}
+
+/* Header Section */
+.contact-header {
+  background-color: #f0f2f5;
+  padding: 60px 20px 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #D4AF37;
+  border-radius: 2px;
+}
+
+/* Contact Content Container — single centered column */
+.contact-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 40px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Contact Cards */
+.contact-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Card Title */
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0 0 25px 0;
+  padding: 0;
+}
+
+/* Card Content */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Info Items */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.whatsapp-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.info-text {
+  flex: 1;
+}
+
+.info-text p {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+.day-label {
+  font-weight: 600 !important;
+  color: #2d3748 !important;
+  font-size: 1rem !important;
+  margin-bottom: 2px !important;
+}
+
+.time-text {
+  color: #718096 !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+}
+
+.whatsapp-note {
+  color: #718096 !important;
+  font-size: 0.9rem !important;
+  margin-top: 2px !important;
+  font-weight: 400 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .contact-content {
+    max-width: 100%;
+    padding: 20px 30px 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding-top: 60px;
+  }
+
+  .contact-header {
+    padding: 50px 20px 30px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-content {
+    padding: 15px 15px 40px;
+    gap: 20px;
+  }
+
+  .contact-card {
+    padding: 28px 24px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .info-text p {
+    font-size: 0.95rem;
+  }
+}
