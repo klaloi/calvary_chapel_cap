@@ -6,7 +6,7 @@ import '../Css/Ministere.css';
 import UEspoirImage from '../assets/UEspoir.png';
 import LaParoleQuiChangeImage from '../assets/LaParolequiChange.png';
 
-// Section Hero de la page Ministère
+//Section de la page Ministère
 const MinistereHero = () => {
   return (
     <section className="ministere-hero">
@@ -100,6 +100,7 @@ const UniversiteEspoir = () => {
   );
 };
 
+
 // Section La Parole Qui Change 
 const ParoleQuiChange = () => {
   return (
@@ -123,23 +124,22 @@ const ParoleQuiChange = () => {
           <p className="parole-overlay-replay">
             Vous pouvez aussi les re-écouter, quand vous le souhaiter sur le site web la parole qui change
           </p>
-        </div>
-        
-        <div className="parole-button-overlay">
-          <a 
-            href="https://laparolequichange.org/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-visit-parole"
-          >
-            Visiter le site web
-          </a>
+          
+          <div className="parole-button-overlay">
+            <a 
+              href="https://laparolequichange.org/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-visit-parole"
+            >
+              Visiter le site web
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
 };
-
 // Composant principal de la page Ministère
 const Ministere = () => {
   React.useEffect(() => {
