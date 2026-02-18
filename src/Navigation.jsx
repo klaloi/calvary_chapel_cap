@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from './assets/dove_image.png';
 import './Css/Navigation.css';
 
 const Navigation = () => {
@@ -51,6 +52,7 @@ const Navigation = () => {
         </button>
 
         <Link to="/" className="nav-logo" onClick={closeMenu}>
+          <img src={logo} alt="Calvary Chapel Logo" className="nav-logo-img" />
           <span className="nav-logo-main">Calvary Chapel <span className="nav-logo-location">Cap-Haïtien</span> </span>
           
         </Link>

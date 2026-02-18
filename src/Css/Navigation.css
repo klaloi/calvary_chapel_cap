@@ -27,8 +27,11 @@
 
 /* Logo */
 .nav-logo {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
   text-decoration: none;
-  display: inline-flex;
+  /* display: inline-flex; */
   align-items: center;
   white-space: nowrap;
   font-size: 1.5rem;
@@ -37,7 +40,17 @@
 
 }
 
+/* Logo image */
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .nav-logo-main {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
   font-weight: 700;
   color: #1e3a5f;
   letter-spacing: -0.5px;
@@ -182,7 +195,7 @@
     font-size: 1.2rem;
     margin: 0 auto;
     text-align: center;
-    padding-top: 35px;
+    padding-top: 0;
   }
 
   /* Menu mobile - sidebar qui slide depuis la droite */
