@@ -90,6 +90,16 @@ const Footer = () => {
                 La Parole Qui Change
               </a>
             </li>
+            <li>
+              <a
+                href="https://lapawoli.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                LaPawoli
+              </a>
+            </li>
           </ul>
         </div>
 

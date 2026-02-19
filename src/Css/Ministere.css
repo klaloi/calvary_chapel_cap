@@ -612,3 +612,65 @@ html, body {
     height: 500px;
   }
 }
+/* Section CCPS - Overlay titre et description */
+.ccps-content-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  color: white;
+  padding: 30px 35px;
+  background: rgba(10, 6, 0, 0.55);
+  backdrop-filter: blur(10px);
+  border-top: 3px solid rgba(212, 175, 55, 0.6);
+}
+
+.ccps-overlay-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #D4AF37;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ccps-overlay-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+}
+
+/* Responsive CCPS */
+@media (max-width: 768px) {
+  .ccps-content-overlay {
+    padding: 25px 20px;
+  }
+
+  .ccps-overlay-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .ccps-overlay-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .ccps-content-overlay {
+    padding: 20px 15px;
+  }
+
+  .ccps-overlay-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .ccps-overlay-description {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+}

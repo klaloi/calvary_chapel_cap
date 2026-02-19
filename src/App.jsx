@@ -2,23 +2,22 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Navigation from './Navigation';
-import Footer from './Footer'; // Import du Footer
+import Footer from './Footer';
 import Apropos from './Screen/Apropos';
 import Ministere from './Screen/Ministere';
 import Contact from './Screen/Contact';
 import UEspoirLogo from './assets/UEspoir.png';
 import LaParoleQuiChangeLogo from './assets/LaParolequiChange.png';
 import PasteurSeige from "./assets/PasteurSeige.png";
-
-
 import LogoCalvaryChapel from './assets/LogoCalvaryChapel.png';
+import CitadelleImage from './assets/citadelle2.jpg.jpeg';
 
 //Composant Hero Section
 const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero-background">
-        <img src={LogoCalvaryChapel} alt="Calvary Chapel Logo" className="hero-logo-bg" />
+        <img src={CitadelleImage} alt="Citadelle" className="hero-citadelle-bg" />
       </div>
       <div className="hero-overlay"></div>
       <div className="hero-content">
@@ -52,6 +51,7 @@ const HeroSection = () => {
     </section>
   );
 };
+
 //Composant Profession de Foi
 const FaithStatement = () => {
   const faithPoints = [
@@ -216,6 +216,7 @@ const Testimonials = () => {
   );
 };
 */
+
 // Composant FAQ
 const FAQ = () => {
   const [openIndex, setOpenIndex] = React.useState(null);
@@ -265,6 +266,7 @@ const FAQ = () => {
     </section>
   );
 };
+
 // Composant Leaders
 const Leaders = () => {
   const leaders = [

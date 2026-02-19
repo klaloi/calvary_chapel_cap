@@ -163,13 +163,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+  background: var(--dark-bg);
   padding: 6rem 2rem 4rem;
   margin-top: 80px;
   overflow: hidden;
 }
 
-/* Arrière-plan avec logo animé */
+/* ── Image Citadelle en arrière-plan ── */
 .hero-background {
   position: absolute;
   top: 0;
@@ -180,43 +180,30 @@ body {
   z-index: 0;
 }
 
-.hero-logo-bg {
+.hero-citadelle-bg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 800px;
-  height: 800px;
-  object-fit: contain;
-  opacity: 0.08;
-  animation: logoFloat 20s ease-in-out infinite, logoPulse 8s ease-in-out infinite;
-  filter: brightness(1.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.45;
+  transform: scale(1.04);
+  animation: citadelleZoom 20s ease-in-out infinite alternate;
+  filter: brightness(0.85) saturate(0.9);
 }
 
-@keyframes logoFloat {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+@keyframes citadelleZoom {
+  0% {
+    transform: scale(1.04);
   }
-  25% {
-    transform: translate(-48%, -52%) scale(1.1) rotate(2deg);
-  }
-  50% {
-    transform: translate(-52%, -50%) scale(1.05) rotate(-1deg);
-  }
-  75% {
-    transform: translate(-50%, -48%) scale(1.08) rotate(1deg);
+  100% {
+    transform: scale(1.12);
   }
 }
 
-@keyframes logoPulse {
-  0%, 100% {
-    opacity: 0.08;
-  }
-  50% {
-    opacity: 0.12;
-  }
-}
-
+/* Dégradé élégant par-dessus l'image */
 .hero::before {
   content: '';
   position: absolute;
@@ -224,9 +211,19 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15, 28, 46, 0.55) 0%,
+      rgba(15, 28, 46, 0.30) 40%,
+      rgba(15, 28, 46, 0.55) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(15, 28, 46, 0.4) 0%,
+      transparent 50%,
+      rgba(15, 28, 46, 0.4) 100%
+    );
   pointer-events: none;
   z-index: 1;
 }
@@ -485,11 +482,6 @@ body {
 
 /* ===== RESPONSIVE HERO ===== */
 @media (max-width: 768px) {
-  .hero-logo-bg {
-    width: 500px;
-    height: 500px;
-  }
-  
   .hero-icon {
     width: 100px;
     height: 100px;
@@ -508,12 +500,7 @@ body {
   .hero {
     padding: 4rem 1rem 2rem;
   }
-  
-  .hero-logo-bg {
-    width: 350px;
-    height: 350px;
-  }
-  
+
   .hero-icon {
     width: 80px;
     height: 80px;
@@ -1007,7 +994,7 @@ body {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   text-align: center;
-  max-width: 350px; /* Limite la largeur de la carte */
+  max-width: 350px;
   width: 100%;
 }
 
@@ -1046,12 +1033,12 @@ body {
   font-weight: 500;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .leader-card {
     max-width: 100%;
   }
 }
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
   .leaders-grid {
@@ -1126,7 +1113,6 @@ body {
     padding: 1rem;
   }
   
-  
   .ministries-logos {
     grid-template-columns: 1fr;
   }
@@ -1141,8 +1127,8 @@ body {
     height: 300px;
   }
 }
-/* Styles pour les logos des ministères - à ajouter dans votre App.css */
 
+/* Styles pour les logos des ministères */
 .ministries-logos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1189,7 +1175,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Responsive pour les logos */
 @media (max-width: 768px) {
   .ministries-logos {
     grid-template-columns: 1fr;

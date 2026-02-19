@@ -5,8 +5,10 @@ import Footer from '../Footer';
 import '../Css/Ministere.css';
 import UEspoirImage from '../assets/UEspoir.png';
 import LaParoleQuiChangeImage from '../assets/LaParolequiChange.png';
+import CcpsImage from '../assets/Ccps.jpeg';
+import LapawolicImage from '../assets/Lapawoli.jpeg';
 
-//Section de la page Ministère
+// Section de la page Ministère
 const MinistereHero = () => {
   return (
     <section className="ministere-hero">
@@ -100,7 +102,6 @@ const UniversiteEspoir = () => {
   );
 };
 
-
 // Section La Parole Qui Change 
 const ParoleQuiChange = () => {
   return (
@@ -140,6 +141,69 @@ const ParoleQuiChange = () => {
     </section>
   );
 };
+
+// ✅ Section Calvary Christian Professional School (CCPS)
+const CcpsMinistere = () => {
+  return (
+    <section className="universite-section">
+      <div className="universite-image-container">
+        <img 
+          src={CcpsImage} 
+          alt="Calvary Christian Professional School" 
+          className="universite-image"
+        />
+        <div className="ccps-content-overlay">
+          <h2 className="ccps-overlay-title">Calvary Christian Professional School</h2>
+          <p className="ccps-overlay-description">
+            C'est un ministère de Calvary Chapel visant à offrir à la communauté une école professionnelle 
+            où ils peuvent apprendre en toute tranquillité.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ✅ Section Lapawoli
+const LapawolicMinistere = () => {
+  return (
+    <section className="parole-section">
+      <div className="parole-image-container">
+        <img 
+          src={LapawolicImage} 
+          alt="Lapawoli Ministère" 
+          className="parole-image"
+        />
+        <div className="parole-overlay"></div>
+        
+        <div className="parole-content-overlay">
+          <h2 className="parole-overlay-title">Lapawoli</h2>
+          
+          <p className="parole-overlay-description">
+            C'est une émission évangélique présentée par Pasteur Fenel JOCELIN, pasteur titulaire de 
+            l'église Calvary Chapel Port-au-Prince, tous les lundis à 7h PM sur les réseaux sociaux.
+          </p>
+          
+          <p className="parole-overlay-replay">
+            Vous pouvez aussi re-écouter les émissions quand vous le souhaitez sur le site web Lapawoli.
+          </p>
+          
+          <div className="parole-button-overlay">
+            <a 
+              href="https://www.lapawoli.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-visit-parole"
+            >
+              Visiter le site web
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Composant principal de la page Ministère
 const Ministere = () => {
   React.useEffect(() => {
@@ -153,6 +217,8 @@ const Ministere = () => {
       <EtapesIntegration />
       <UniversiteEspoir />
       <ParoleQuiChange />
+      <CcpsMinistere />
+      <LapawolicMinistere />
       <Footer />
     </div>
   );
