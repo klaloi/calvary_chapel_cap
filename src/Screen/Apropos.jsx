@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navigation from '../Navigation';
 import '../Css/Apropos.css';
 import Footer from '../Footer';
 import LogoCalvaryChapel from '../assets/LogoCalvaryChapel.png';
 
 const Apropos = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.replace('#', ''));
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <div className="apropos-page">
       {/* Header Navigation */}
       <Navigation />
 
       {/* Hero Section with Animated Logo */}
-      <section className="hero-section">
+      <section className="hero-section" id="hero">
         <div className="hero-background-apropos">
           <img src={LogoCalvaryChapel} alt="Calvary Chapel Logo" className="hero-logo-bg-apropos" />
           <div className="hero-logo-particles">
@@ -33,7 +48,7 @@ const Apropos = () => {
       </section>
 
       {/* History Section */}
-      <section className="history-section">
+      <section className="history-section" id="notre-histoire">
         <h3 className="section-title">Notre histoire</h3>
         <div className="history-content">
           <p>En 1965, dans l'État de Californie, plus précisément à Costa Mesa, un petit groupe de 25 personnes dirigé par le Pasteur Chuck Smith, lance le premier Calvary Chapel. Aujourd'hui, c'est plus de 850 églises en Amérique du Nord, 200 autres, en Amérique du Sud, en Europe, Afrique, Asie et Australie.</p>
@@ -45,12 +60,17 @@ const Apropos = () => {
       </section>
 
       {/* Credo Section */}
-      <section className="credo-section">
-        <h3 className="section-title">Notre Credo</h3>
+      <section className="credo-section" id="notre-credo">
         {/* Affiliation Banner */}
         <div className="affiliation-banner">
           <div className="affiliation-line"></div>
           <div className="affiliation-content">
+            <span className="affiliation-church">Calvary Chapel Cap-Haïtien</span>
+            <div className="affiliation-divider">
+              <span className="affiliation-dot"></span>
+              <span className="affiliation-dot"></span>
+              <span className="affiliation-dot"></span>
+            </div>
             <span className="affiliation-label">Annexe officielle de</span>
             <span className="affiliation-church">Calvary Chapel Port-au-Prince</span>
             <div className="affiliation-divider">
@@ -63,6 +83,8 @@ const Apropos = () => {
           </div>
           <div className="affiliation-line"></div>
         </div>
+        <h3 className="section-title">Notre Crédo</h3>
+        
         <p className="credo-intro">À Calvary Chapel Cap-Haïtien, nous croyons:</p>
         
         <div className="credo-grid">
@@ -117,7 +139,7 @@ const Apropos = () => {
       </section>
 
       {/* Pastors Section */}
-      <section className="pastors-section">
+      <section className="pastors-section" id="notre-leader">
         <h3 className="section-title">Notre Leader</h3>
         <div className="pastor-featured-card">
           <div className="pastor-featured-left">

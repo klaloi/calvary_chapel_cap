@@ -41,7 +41,7 @@ const Contact = () => {
                 <MdAccessTime size={24} color="#D4AF37" />
                 <div className="info-text">
                   <p className="day-label">Samedi</p>
-                  <p className="time-text">4hres PM - 5:30 PM</p>
+                  <p className="time-text">4:00 PM - 5:30 PM</p>
                 </div>
               </div>
             </div>
