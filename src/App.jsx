@@ -38,6 +38,13 @@ const HeroSection = () => {
           disciples pour Christ et de les rendre disponibles afin que le Saint-Esprit puisse les utiliser à 
           toute bonne œuvre.
         </p>
+        <div className="hero-verse-block">
+          <span className="hero-verse-icon">✦</span>
+          <blockquote className="hero-verse-text">
+            "Ils persévéraient dans l'enseignement des apôtres, dans la communion fraternelle, dans la fraction du pain, et dans les prières."
+          </blockquote>
+          <span className="hero-verse-ref">Actes 2 : 42</span>
+        </div>
         <Link to="/Apropos">
           <button className="btn-primary">En savoir plus</button>
         </Link>

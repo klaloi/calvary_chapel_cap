@@ -386,6 +386,80 @@ body {
   animation: fadeInUp 1s ease-out 0.9s both;
 }
 
+/* ===== HERO VERSE BLOCK ===== */
+.hero-verse-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 auto 3rem;
+  max-width: 680px;
+  padding: 2rem 2.5rem;
+  border-top: 1px solid rgba(201, 169, 97, 0.25);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.25);
+  position: relative;
+  animation: fadeInUp 1s ease-out 1s both;
+}
+
+.hero-verse-block::before,
+.hero-verse-block::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.5;
+}
+
+.hero-verse-block::before {
+  top: -1px;
+}
+
+.hero-verse-block::after {
+  bottom: -1px;
+}
+
+.hero-verse-icon {
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  opacity: 0.7;
+  letter-spacing: 6px;
+}
+
+.hero-verse-text {
+  font-family: var(--font-primary);
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.9;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.hero-verse-ref {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .hero-verse-block {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .hero-verse-text {
+    font-size: 1rem;
+  }
+}
+
 .btn-primary {
   background: var(--accent-gold);
   color: var(--primary-navy);

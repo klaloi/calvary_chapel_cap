@@ -47,7 +47,23 @@ const Apropos = () => {
       {/* Credo Section */}
       <section className="credo-section">
         <h3 className="section-title">Notre Credo</h3>
-        <p className="credo-intro">À Calvary Chapel Port-au-Prince, nous croyons:</p>
+        {/* Affiliation Banner */}
+        <div className="affiliation-banner">
+          <div className="affiliation-line"></div>
+          <div className="affiliation-content">
+            <span className="affiliation-label">Annexe officielle de</span>
+            <span className="affiliation-church">Calvary Chapel Port-au-Prince</span>
+            <div className="affiliation-divider">
+              <span className="affiliation-dot"></span>
+              <span className="affiliation-dot"></span>
+              <span className="affiliation-dot"></span>
+            </div>
+            <span className="affiliation-pastor-label">Sous la direction du</span>
+            <span className="affiliation-pastor-name">Pasteur Fenel JOCELIN</span>
+          </div>
+          <div className="affiliation-line"></div>
+        </div>
+        <p className="credo-intro">À Calvary Chapel Cap-Haïtien, nous croyons:</p>
         
         <div className="credo-grid">
           <div className="credo-card">
@@ -103,10 +119,23 @@ const Apropos = () => {
       {/* Pastors Section */}
       <section className="pastors-section">
         <h3 className="section-title">Notre Leader</h3>
-        <div className="pastors-grid">
-          <div className="pastor-card">
-            <h4 className="pastor-name">Pasteur Seige Poteau</h4>
-            <p className="pastor-quote">"Croyez en Dieu! Ensuite, exercez vos propres capacités! Mais, sans une foi sincère et inébranlable dans la toute-puissance du Seigneur, vous ne pourrez pas atteindre vos objectifs. Mettez simplement Jésus en premier en recherchant la paix, la santification. Et Les bénédictions suivront."</p>
+        <div className="pastor-featured-card">
+          <div className="pastor-featured-left">
+            <div className="pastor-avatar-ring">
+              <div className="pastor-avatar-inner">
+              </div>
+            </div>
+            <div className="pastor-featured-decoration">
+              <span className="pastor-deco-line"></span>
+              <span className="pastor-deco-cross">✦</span>
+              <span className="pastor-deco-line"></span>
+            </div>
+          </div>
+
+          <div className="pastor-featured-right">
+            <span className="pastor-featured-label">Berger de l'Église</span>
+            <h4 className="pastor-featured-name">Pasteur Phamfy Succès</h4>
+            <div className="pastor-featured-divider"></div>
           </div>
         </div>
       </section>
