@@ -156,7 +156,7 @@ const Apropos = () => {
 
           <div className="pastor-featured-right">
             <span className="pastor-featured-label">Pasteur de l'Église</span>
-            <h4 className="pastor-featured-name">Pasteur Phamfy Succès</h4>
+            <h4 className="pastor-featured-name">Pasteur Phanfy SUCCÈS</h4>
             <div className="pastor-featured-divider"></div>
           </div>
         </div>

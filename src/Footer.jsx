@@ -124,7 +124,7 @@ const Footer = () => {
                 href="mailto:contact@calvarychapelcaphaitian.org"
                 className="footer-link footer-contact-value"
               >
-                contact@calvarychapelcaphaitian.org
+                calvarychapelcaphaitien@gmail.com
               </a>
             </li>
           </ul>

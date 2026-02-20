@@ -1189,3 +1189,30 @@ body {
     font-size: 1.1rem;
   }
 }
+/* Grille 4 ministères */
+.ministries-logos-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.logo-placeholder-text {
+  font-family: var(--font-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  text-align: center;
+  padding: 1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .ministries-logos-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ministries-logos-4 {
+    grid-template-columns: 1fr;
+  }
+}

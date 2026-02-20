@@ -11,6 +11,8 @@ import LaParoleQuiChangeLogo from './assets/LaParolequiChange.png';
 import PasteurSeige from "./assets/PasteurSeige.png";
 import LogoCalvaryChapel from './assets/LogoCalvaryChapel.png';
 import CitadelleImage from './assets/citadelle2.jpg.jpeg';
+import LapawoliLogo from './assets/Lapawoli.jpeg';   
+import CCPSLogo from './assets/CCPS.png';
 
 //Composant Hero Section
 const HeroSection = () => {
@@ -31,7 +33,7 @@ const HeroSection = () => {
           <span className="title-secondary">Cap-Haïtien</span>
         </h1>
         <p className="hero-description">
-          La Calvary Chapel Cap-Haïtien est une Église Chrétienne se démarquant de toute 
+          Calvary Chapel Cap-Haïtien est une Église Chrétienne se démarquant de toute 
           dénomination. Ce qui nous caractérise c'est l'Enseignement de la Parole de Dieu: Livre par 
           Livre, Chapitre par Chapitre et Verset par Verset. Notre objectif unique est de faire des 
           disciples pour Christ et de les rendre disponibles afin que le Saint-Esprit puisse les utiliser à 
@@ -118,6 +120,16 @@ const Ministries = () => {
       image: LaParoleQuiChangeLogo,
       link: "https://laparolequichange.org/"
     },
+    { 
+      name: "Lapawoli", 
+      image: LapawoliLogo,
+      link: "https://www.lapawoli.com/"
+    },
+    { 
+      name: "CCPS", 
+      image: CCPSLogo,
+      link: "#"
+    },
   ];
 
   const handleLearnMore = (link) => {
@@ -129,7 +141,7 @@ const Ministries = () => {
       <h2 className="section-title">Nos Ministères</h2>
       <p className="section-subtitle">Grandir et Servir Ensemble</p>
       
-      <div className="ministries-content">
+      {/* <div className="ministries-content">
         <div className="ministries-list">
           {ministries.map((ministry, index) => (
             <div key={index} className="ministry-item">
@@ -154,21 +166,25 @@ const Ministries = () => {
           </div>
           <button className="slider-btn next" onClick={() => setCurrentSlide(Math.min(8, currentSlide + 1))}>›</button>
         </div>
-      </div>
+      </div> */}
 
       <p className="ministries-footer">
         Explorez les différents ministères de notre église et trouvez votre place dans notre communauté.
       </p>
 
-      <div className="ministries-logos">
+      <div className="ministries-logos ministries-logos-4">
         {ministriesLogos.map((ministry, index) => (
           <div key={index} className="ministry-logo-card">
             <div className="logo-container">
-              <img 
-                src={ministry.image} 
-                alt={ministry.name}
-                className="ministry-logo-image"
-              />
+              {ministry.image ? (
+                <img 
+                  src={ministry.image} 
+                  alt={ministry.name}
+                  className="ministry-logo-image"
+                />
+              ) : (
+                <div className="logo-placeholder-text">{ministry.name}</div>
+              )}
             </div>
             <h3 className="ministry-logo-name">{ministry.name}</h3>
             <button 
@@ -218,54 +234,54 @@ const Testimonials = () => {
 */
 
 // Composant FAQ
-const FAQ = () => {
-  const [openIndex, setOpenIndex] = React.useState(null);
+// const FAQ = () => {
+//   const [openIndex, setOpenIndex] = React.useState(null);
 
-  const faqs = [
-    {
-      question: "Quels sont les heures de services?",
-      answer: "Nous avons deux services. L'un chaque Dimanche 8:00 AM - 9:30 AM et chaque mercredi 4:30 PM - 6:00 PM"
-    },
-    {
-      question: "Comment devenir membre de L'église Calvary Chapel Port-au-Prince?",
-      answer: "Pour devenir membre de Calvary Chapel Port-au-Prince, il faut participer à nos deux classes, Philosophie du ministère et Fondation de la FOi."
-    },
-    {
-      question: "Comment intégrer notre communauté WhatsApp?",
-      answer: "Pour intégrer notre communauté WhatsApp, vous devez enregistrer ce numéro: (+509) 4769 - 7777. Après quoi, vous allez envoyez le mot \"Bible\".",
-    },
-    {
-      question: "Quelle est votre politique de baptême?",
-      answer: "Nous avons baptême d'eau chaque troisième (3ème) samedi du mois. Vous devrez d'abord vous inscrire à l'administration au numéro suivant: (+509) 2228 6083. Une serviette et un habit de rechange est obligatoire."
-    }
-  ];
+//   const faqs = [
+//     {
+//       question: "Quels sont les heures de services?",
+//       answer: "Nous avons deux services. L'un chaque Dimanche 8:00 AM - 9:30 AM et chaque mercredi 4:30 PM - 6:00 PM"
+//     },
+//     {
+//       question: "Comment devenir membre de L'église Calvary Chapel Port-au-Prince?",
+//       answer: "Pour devenir membre de Calvary Chapel Port-au-Prince, il faut participer à nos deux classes, Philosophie du ministère et Fondation de la FOi."
+//     },
+//     {
+//       question: "Comment intégrer notre communauté WhatsApp?",
+//       answer: "Pour intégrer notre communauté WhatsApp, vous devez enregistrer ce numéro: (+509) 4769 - 7777. Après quoi, vous allez envoyez le mot \"Bible\".",
+//     },
+//     {
+//       question: "Quelle est votre politique de baptême?",
+//       answer: "Nous avons baptême d'eau chaque troisième (3ème) samedi du mois. Vous devrez d'abord vous inscrire à l'administration au numéro suivant: (+509) 2228 6083. Une serviette et un habit de rechange est obligatoire."
+//     }
+//   ];
 
-  return (
-    <section className="faq-section">
-      <h2 className="section-title">Des questions?</h2>
-      <p className="section-subtitle">Retrouvez les questions souvent posées ici.</p>
+//   return (
+//     <section className="faq-section">
+//       <h2 className="section-title">Des questions?</h2>
+//       <p className="section-subtitle">Retrouvez les questions souvent posées ici.</p>
       
-      <div className="faq-container">
-        {faqs.map((faq, index) => (
-          <div key={index} className="faq-item">
-            <button 
-              className={`faq-question ${openIndex === index ? 'active' : ''}`}
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            >
-              {faq.question}
-              <span className="faq-icon">{openIndex === index ? '˅' : '˃'}</span>
-            </button>
-            {openIndex === index && (
-              <div className="faq-answer">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+//       <div className="faq-container">
+//         {faqs.map((faq, index) => (
+//           <div key={index} className="faq-item">
+//             <button 
+//               className={`faq-question ${openIndex === index ? 'active' : ''}`}
+//               onClick={() => setOpenIndex(openIndex === index ? null : index)}
+//             >
+//               {faq.question}
+//               <span className="faq-icon">{openIndex === index ? '˅' : '˃'}</span>
+//             </button>
+//             {openIndex === index && (
+//               <div className="faq-answer">
+//                 {faq.answer}
+//               </div>
+//             )}
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// };
 
 // Composant Leaders
 const Leaders = () => {
@@ -305,7 +321,6 @@ const HomePage = () => {
       <HeroSection />
       <FaithStatement />
       <Ministries />
-      <FAQ />
       <Leaders />
       <Footer />
     </>

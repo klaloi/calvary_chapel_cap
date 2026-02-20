@@ -5,7 +5,7 @@ import Footer from '../Footer';
 import '../Css/Ministere.css';
 import UEspoirImage from '../assets/UEspoir.png';
 import LaParoleQuiChangeImage from '../assets/LaParolequiChange.png';
-import CcpsImage from '../assets/Ccps.jpeg';
+import CcpsImage from '../assets/CCPS.png';
 import LapawolicImage from '../assets/Lapawoli.jpeg';
 
 // Section de la page Ministère
