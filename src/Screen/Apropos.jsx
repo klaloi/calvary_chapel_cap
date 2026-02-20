@@ -143,15 +143,29 @@ const Apropos = () => {
         <h3 className="section-title">Notre Leader</h3>
         <div className="pastor-featured-card">
           <div className="pastor-featured-left">
+
+            {/* Anneau doré avec logo Calvary Chapel */}
             <div className="pastor-avatar-ring">
               <div className="pastor-avatar-inner">
+                <div className="pastor-logo-wrapper">
+                  <img
+                    src={LogoCalvaryChapel}
+                    alt="Calvary Chapel"
+                    className="pastor-avatar-logo"
+                  />
+                  {/* Halo lumineux animé */}
+                  <div className="pastor-logo-glow" />
+                </div>
               </div>
             </div>
+
+            {/* Décoration sous le rond */}
             <div className="pastor-featured-decoration">
               <span className="pastor-deco-line"></span>
               <span className="pastor-deco-cross">✦</span>
               <span className="pastor-deco-line"></span>
             </div>
+
           </div>
 
           <div className="pastor-featured-right">

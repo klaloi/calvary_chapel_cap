@@ -11,56 +11,198 @@ import LaParoleQuiChangeLogo from './assets/LaParolequiChange.png';
 import PasteurSeige from "./assets/PasteurSeige.png";
 import LogoCalvaryChapel from './assets/LogoCalvaryChapel.png';
 import CitadelleImage from './assets/citadelle2.jpg.jpeg';
-import LapawoliLogo from './assets/Lapawoli.jpeg';   
+import LapawoliLogo from './assets/Lapawoli.jpeg';
 import CCPSLogo from './assets/CCPS.png';
+import CalvaryPAPLogo from './assets/Calvary_chapel_pap.png';
 
-//Composant Hero Section
-const HeroSection = () => {
+// ─── Modal pour CCPS ───────────────────────────────────────────────
+const CCPSModal = ({ isOpen, onClose }) => {
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  const formations = [
+    { icon: "🔲", label: "Carrelage" },
+    { icon: "🔧", label: "Plomberie" },
+    { icon: "💻", label: "Informatique" },
+    { icon: "🌐", label: "Anglais" },
+    { icon: "⚡", label: "Électricité" },
+    { icon: "🪟", label: "Techniques Windows" },
+  ];
+
   return (
-    <section className="hero">
-      <div className="hero-background">
-        <img src={CitadelleImage} alt="Citadelle" className="hero-citadelle-bg" />
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-container" onClick={e => e.stopPropagation()}>
+
+        {/* Bouton fermer — toujours visible, position fixe dans le conteneur */}
+        <button className="modal-close" onClick={onClose} aria-label="Fermer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        {/* ── Zone scrollable ── */}
+        <div className="modal-scroll">
+
+          {/* Header image */}
+          <div className="modal-image-wrapper">
+            <img
+              src={CCPSLogo}
+              alt="Calvary Christian Professional School"
+              className="modal-logo-full"
+            />
+            <div className="modal-image-gradient" />
+            {/* Titre en overlay sur l'image */}
+            <div className="modal-image-title">
+              <h2 className="modal-title">
+                Calvary Christian<br />
+                <span>Professional School</span>
+              </h2>
+            </div>
+          </div>
+
+          {/* ── Corps ── */}
+          <div className="modal-content">
+
+            {/* Divider doré */}
+            <div className="modal-divider">
+              <span className="modal-divider-gem">✦</span>
+            </div>
+
+            {/* Chiffres clés */}
+            <div className="modal-stat-row">
+              <div className="modal-stat">
+                <span className="modal-stat-number">
+                  4 500<span className="modal-stat-plus">+</span>
+                </span>
+                <span className="modal-stat-label">Diplômés depuis 2007</span>
+              </div>
+              <div className="modal-stat-sep" />
+              <div className="modal-stat">
+                <span className="modal-stat-number">6</span>
+                <span className="modal-stat-label">Filières de formation</span>
+              </div>
+              <div className="modal-stat-sep" />
+              <div className="modal-stat">
+                <span className="modal-stat-number">2007</span>
+                <span className="modal-stat-label">Année de fondation</span>
+              </div>
+            </div>
+
+            {/* Histoire */}
+            <div className="modal-section">
+              <h3 className="modal-section-title">
+                <span className="modal-section-line" />
+                Notre Histoire
+                <span className="modal-section-line" />
+              </h3>
+              <p className="modal-description">
+                Fondée en juin <strong>2007</strong> par le Pasteur Seige Poteau, Calvary Christian Professional School (CCPS) a vu le jour dans les locaux de l'église situés à l'époque au <strong>#1, rue Price Mars</strong>.
+              </p>
+              <p className="modal-description">
+                Dès son ouverture, l'institution proposait des formations en anglais, auto-école et informatique. Au-delà de l'acquisition de compétences pratiques, la mission première de CCPS a toujours été claire : <em>former des professionnels compétents tout en partageant les valeurs chrétiennes à travers l'évangélisation.</em>
+              </p>
+            </div>
+
+            {/* Formations */}
+            <div className="modal-section">
+              <h3 className="modal-section-title">
+                <span className="modal-section-line" />
+                Nos Formations
+                <span className="modal-section-line" />
+              </h3>
+              <p className="modal-description">
+                Aujourd'hui, CCPS élargit son offre et propose des cours professionnels dans les domaines suivants :
+              </p>
+              <div className="modal-formations-grid">
+                {formations.map((f, i) => (
+                  <div key={i} className="modal-formation-item">
+                    <span className="modal-formation-icon">{f.icon}</span>
+                    <span className="modal-formation-label">{f.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Impact */}
+            <div className="modal-section">
+              <h3 className="modal-section-title">
+                <span className="modal-section-line" />
+                Notre Impact
+                <span className="modal-section-line" />
+              </h3>
+              <p className="modal-description">
+                Depuis sa création, l'école a formé et diplômé <strong>plus de 4 500 étudiants</strong>, contribuant au développement professionnel et personnel de milliers de jeunes et d'adultes en Haïti.
+              </p>
+            </div>
+
+            {/* Verset
+            <div className="modal-verse">
+              <span className="modal-verse-icon">❝</span>
+              <p>"Instruire le sage, et il deviendra encore plus sage ; enseigne le juste, et il augmentera son savoir."</p>
+              <span className="modal-verse-ref">Proverbes 9 : 9</span>
+            </div> */}
+
+          </div>
+        </div>{/* fin modal-scroll */}
       </div>
-      <div className="hero-overlay"></div>
-      <div className="hero-content">
-        <div className="hero-icon">
-          <img src={LogoCalvaryChapel} alt="Logo" className="hero-icon-img" />
-        </div>
-        <h2 className="hero-welcome">Bienvenue à</h2>
-        <h1 className="hero-title">
-          <span className="title-primary">Calvary Chapel</span>
-          <br />
-          <span className="title-secondary">Cap-Haïtien</span>
-        </h1>
-        <p className="hero-description">
-          Calvary Chapel Cap-Haïtien est une Église Chrétienne se démarquant de toute 
-          dénomination. Ce qui nous caractérise c'est l'Enseignement de la Parole de Dieu: Livre par 
-          Livre, Chapitre par Chapitre et Verset par Verset. Notre objectif unique est de faire des 
-          disciples pour Christ et de les rendre disponibles afin que le Saint-Esprit puisse les utiliser à 
-          toute bonne œuvre.
-        </p>
-        <div className="hero-verse-block">
-          <span className="hero-verse-icon">✦</span>
-          <blockquote className="hero-verse-text">
-            "Ils persévéraient dans l'enseignement des apôtres, dans la communion fraternelle, dans la fraction du pain, et dans les prières."
-          </blockquote>
-          <span className="hero-verse-ref">Actes 2 : 42</span>
-        </div>
-        <Link to="/Apropos">
-          <button className="btn-primary">En savoir plus</button>
-        </Link>
-      </div>
-    </section>
+    </div>
   );
 };
 
-//Composant Profession de Foi
+// ─── Hero Section ──────────────────────────────────────────────────
+const HeroSection = () => (
+  <section className="hero">
+    <div className="hero-background">
+      <img src={CitadelleImage} alt="Citadelle" className="hero-citadelle-bg" />
+    </div>
+    <div className="hero-overlay" />
+    <div className="hero-content">
+      <div className="hero-icon">
+        <img src={LogoCalvaryChapel} alt="Logo" className="hero-icon-img" />
+      </div>
+      <h2 className="hero-welcome">Bienvenue à</h2>
+      <h1 className="hero-title">
+        <span className="title-primary">Calvary Chapel</span>
+        <br />
+        <span className="title-secondary">Cap-Haïtien</span>
+      </h1>
+      <p className="hero-description">
+        Calvary Chapel Cap-Haïtien est une Église Chrétienne se démarquant de toute
+        dénomination. Ce qui nous caractérise c'est l'Enseignement de la Parole de Dieu : Livre par
+        Livre, Chapitre par Chapitre et Verset par Verset. Notre objectif unique est de faire des
+        disciples pour Christ et de les rendre disponibles afin que le Saint-Esprit puisse les utiliser à
+        toute bonne œuvre.
+      </p>
+      <div className="hero-verse-block">
+        <span className="hero-verse-icon">✦</span>
+        <blockquote className="hero-verse-text">
+          "Ils persévéraient dans l'enseignement des apôtres, dans la communion fraternelle, dans la fraction du pain, et dans les prières."
+        </blockquote>
+        <span className="hero-verse-ref">Actes 2 : 42</span>
+      </div>
+      <Link to="/Apropos">
+        <button className="btn-primary">En savoir plus</button>
+      </Link>
+    </div>
+  </section>
+);
+
+// ─── Profession de Foi ─────────────────────────────────────────────
 const FaithStatement = () => {
   const faithPoints = [
     {
       number: "1",
       title: "Foi",
-      description: "Nous croyons en un Dieu unique, existant en trois personnes: le Père, le Fils, et le Saint-Esprit; qu'ils sont égaux en puissance et en gloire et que ce Dieu trinitaire, créateur de toute chose, a le pouvoir en place et de gouverner aussi toute chose."
+      description: "Nous croyons en un Dieu unique, existant en trois personnes : le Père, le Fils, et le Saint-Esprit ; qu'ils sont égaux en puissance et en gloire et que ce Dieu trinitaire, créateur de toute chose, a le pouvoir en place et de gouverner aussi toute chose."
     },
     {
       number: "2",
@@ -98,87 +240,62 @@ const FaithStatement = () => {
   );
 };
 
-//Composant Ministères
+// ─── Ministères ────────────────────────────────────────────────────
 const Ministries = () => {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-  
-  const ministries = [
-    {
-      title: "Accueil",
-      description: "Pour offrir un espace chaleureux et bienveillant ; Adoration, pour conduire chacun dans une louange authentique et vivante;"
-    },
-  ];
-
-  const ministriesLogos = [
-    { 
-      name: "Université Espoir", 
-      image: UEspoirLogo,
-      link: "https://uespoir.edu.ht/"
-    },
-    { 
-      name: "La parole qui change", 
-      image: LaParoleQuiChangeLogo,
-      link: "https://laparolequichange.org/"
-    },
-    { 
-      name: "Lapawoli", 
-      image: LapawoliLogo,
-      link: "https://www.lapawoli.com/"
-    },
-    { 
-      name: "CCPS", 
-      image: CCPSLogo,
-      link: "#"
-    },
-  ];
+  const [ccpsModalOpen, setCcpsModalOpen] = React.useState(false);
 
   const handleLearnMore = (link) => {
-    window.open(link, '_blank', 'noopener,noreferrer');
+    if (link) window.open(link, '_blank', 'noopener,noreferrer');
   };
+
+  const ministriesLogos = [
+    {
+      name: "Université Espoir",
+      image: UEspoirLogo,
+      link: "https://uespoir.edu.ht/",
+      type: "external"
+    },
+    {
+      name: "La Parole qui Change",
+      image: LaParoleQuiChangeLogo,
+      link: "https://laparolequichange.org/",
+      type: "external"
+    },
+    {
+      name: "Lapawoli",
+      image: LapawoliLogo,
+      link: "https://www.lapawoli.com/",
+      type: "external"
+    },
+    {
+      name: "CCPS",
+      image: CCPSLogo,
+      type: "modal"
+    },
+    {
+      name: "Calvary Chapel Port-au-Prince",
+      image: CalvaryPAPLogo,
+      link: "https://www.calvarypap.org/",
+      type: "external"
+    },
+  ];
 
   return (
     <section className="ministries-section">
       <h2 className="section-title">Nos Ministères</h2>
       <p className="section-subtitle">Grandir et Servir Ensemble</p>
-      
-      {/* <div className="ministries-content">
-        <div className="ministries-list">
-          {ministries.map((ministry, index) => (
-            <div key={index} className="ministry-item">
-              <div className="ministry-number">{index + 1}</div>
-              <div className="ministry-info">
-                <h3 className="ministry-title">{ministry.title}</h3>
-                <p className="ministry-description">{ministry.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="ministry-slider">
-          <button className="slider-btn prev" onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}>‹</button>
-          <div className="slider-content">
-            <div className="slider-image">Ministère {currentSlide + 1}</div>
-            <div className="slider-dots">
-              {[...Array(2)].map((_, i) => (
-                <span key={i} className={`dot ${i === currentSlide ? 'active' : ''}`}></span>
-              ))}
-            </div>
-          </div>
-          <button className="slider-btn next" onClick={() => setCurrentSlide(Math.min(8, currentSlide + 1))}>›</button>
-        </div>
-      </div> */}
 
       <p className="ministries-footer">
         Explorez les différents ministères de notre église et trouvez votre place dans notre communauté.
       </p>
 
-      <div className="ministries-logos ministries-logos-4">
+      <div className="ministries-logos ministries-logos-5">
         {ministriesLogos.map((ministry, index) => (
           <div key={index} className="ministry-logo-card">
             <div className="logo-container">
               {ministry.image ? (
-                <img 
-                  src={ministry.image} 
+                <img
+                  src={ministry.image}
                   alt={ministry.name}
                   className="ministry-logo-image"
                 />
@@ -187,109 +304,34 @@ const Ministries = () => {
               )}
             </div>
             <h3 className="ministry-logo-name">{ministry.name}</h3>
-            <button 
+            <button
               className="btn-secondary"
-              onClick={() => handleLearnMore(ministry.link)}
+              onClick={() => {
+                if (ministry.type === 'modal') {
+                  setCcpsModalOpen(true);
+                } else {
+                  handleLearnMore(ministry.link);
+                }
+              }}
             >
               En savoir plus
             </button>
           </div>
         ))}
       </div>
+
+      <CCPSModal isOpen={ccpsModalOpen} onClose={() => setCcpsModalOpen(false)} />
     </section>
   );
 };
 
-/*
-//Composant Témoignages
-const Testimonials = () => {
-  const testimonials = [
-    {
-      text: "Je n'ai pas compris l'épreuve sur le moment, mais aujourd'hui, je vois qu'elle m'a rapproché de Dieu plus que n'importe quelle bénédiction."
-    },
-    {
-      text: "C'est au moment où j'avais tout perdu que j'ai compris que la foi, c'est s'accrocher à Dieu quand il ne reste plus rien d'autre."
-    },
-    {
-      text: "Ce n'est pas le temps qui m'a guéri, c'est la vérité de Dieu sur moi qui a remplacé les mensonges que je croyais."
-    },
-    {
-      text: "Ce n'est pas le temps qui m'a guéri, c'est la vérité de Dieu sur moi qui a remplacé les mensonges que je croyais."
-    }
-  ];
-
-  return (
-    <section className="testimonials-section">
-      <h2 className="section-title">Ce que disent les autres</h2>
-      <div className="testimonials-grid">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="testimonial-card">
-            <p className="testimonial-text">{testimonial.text}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
-*/
-
-// Composant FAQ
-// const FAQ = () => {
-//   const [openIndex, setOpenIndex] = React.useState(null);
-
-//   const faqs = [
-//     {
-//       question: "Quels sont les heures de services?",
-//       answer: "Nous avons deux services. L'un chaque Dimanche 8:00 AM - 9:30 AM et chaque mercredi 4:30 PM - 6:00 PM"
-//     },
-//     {
-//       question: "Comment devenir membre de L'église Calvary Chapel Port-au-Prince?",
-//       answer: "Pour devenir membre de Calvary Chapel Port-au-Prince, il faut participer à nos deux classes, Philosophie du ministère et Fondation de la FOi."
-//     },
-//     {
-//       question: "Comment intégrer notre communauté WhatsApp?",
-//       answer: "Pour intégrer notre communauté WhatsApp, vous devez enregistrer ce numéro: (+509) 4769 - 7777. Après quoi, vous allez envoyez le mot \"Bible\".",
-//     },
-//     {
-//       question: "Quelle est votre politique de baptême?",
-//       answer: "Nous avons baptême d'eau chaque troisième (3ème) samedi du mois. Vous devrez d'abord vous inscrire à l'administration au numéro suivant: (+509) 2228 6083. Une serviette et un habit de rechange est obligatoire."
-//     }
-//   ];
-
-//   return (
-//     <section className="faq-section">
-//       <h2 className="section-title">Des questions?</h2>
-//       <p className="section-subtitle">Retrouvez les questions souvent posées ici.</p>
-      
-//       <div className="faq-container">
-//         {faqs.map((faq, index) => (
-//           <div key={index} className="faq-item">
-//             <button 
-//               className={`faq-question ${openIndex === index ? 'active' : ''}`}
-//               onClick={() => setOpenIndex(openIndex === index ? null : index)}
-//             >
-//               {faq.question}
-//               <span className="faq-icon">{openIndex === index ? '˅' : '˃'}</span>
-//             </button>
-//             {openIndex === index && (
-//               <div className="faq-answer">
-//                 {faq.answer}
-//               </div>
-//             )}
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// Composant Leaders
+// ─── Leaders ───────────────────────────────────────────────────────
 const Leaders = () => {
   const leaders = [
     {
       name: "Pasteur Seige P.",
       title: "Pasteur Fondateur",
-      image: PasteurSeige  
+      image: PasteurSeige
     },
   ];
 
@@ -299,8 +341,8 @@ const Leaders = () => {
       <div className="leaders-grid">
         {leaders.map((leader, index) => (
           <div key={index} className="leader-card">
-            <img 
-              src={leader.image} 
+            <img
+              src={leader.image}
               alt={leader.name}
               className="leader-image"
             />
@@ -313,21 +355,19 @@ const Leaders = () => {
   );
 };
 
-// Page d'accueil
-const HomePage = () => {
-  return (
-    <>
-      <Navigation />
-      <HeroSection />
-      <FaithStatement />
-      <Ministries />
-      <Leaders />
-      <Footer />
-    </>
-  );
-};
+// ─── Page d'accueil ────────────────────────────────────────────────
+const HomePage = () => (
+  <>
+    <Navigation />
+    <HeroSection />
+    <FaithStatement />
+    <Ministries />
+    <Leaders />
+    <Footer />
+  </>
+);
 
-// Composant Principal App avec Router
+// ─── App principal ─────────────────────────────────────────────────
 function App() {
   return (
     <Router>
@@ -336,7 +376,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/Apropos" element={<Apropos />} />
           <Route path="/Ministere" element={<Ministere />} />
-          <Route path="/Contact" element={<Contact/>} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

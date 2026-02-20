@@ -706,3 +706,70 @@
     text-align: center;
   }
 }
+/* ================================================================
+   AJOUTS À COLLER À LA FIN DE Apropos.css
+   ================================================================ */
+
+/* ── Logo dans le rond du pasteur ─────────────────────────────────── */
+
+/* Conteneur centré dans pastor-avatar-inner */
+.pastor-logo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Logo lui-même */
+.pastor-avatar-logo {
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);        /* blanc pur */
+  opacity: 0.92;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Légère rotation au hover de la carte */
+.pastor-featured-card:hover .pastor-avatar-logo {
+  transform: scale(1.08) rotate(6deg);
+  opacity: 1;
+}
+
+/* Halo lumineux doré centré derrière le logo */
+.pastor-logo-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 165, 57, 0.18) 0%,
+    rgba(212, 165, 57, 0.06) 55%,
+    transparent 75%
+  );
+  z-index: 1;
+  pointer-events: none;
+  animation: glowPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* Renforcement de l'anneau doré existant au hover */
+.pastor-featured-card:hover .pastor-avatar-ring {
+  box-shadow: 0 0 55px rgba(212, 165, 57, 0.5);
+}
